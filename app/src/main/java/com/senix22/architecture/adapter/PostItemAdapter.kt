@@ -33,14 +33,13 @@ class PostItemAdapter(val postList: List<Post>, val context: Context) :
         when (postList[position].userId) {
             7 -> {
                 holder.itemView.userId.text = postList[position].userId.toString()
-                holder.itemView.txtPostTitle.text = postList[position].title
+                holder.itemView.txtPostTitle.text = ""
                 holder.itemView.txtPostBody.text = "Тут міг бути пост юзера ${postList[position].userId}, але він забанений”"
                 holder.itemView.setBackgroundColor(Color.RED)
             }
             3,4 -> {
                 holder.itemView.userId.text = postList[position].userId.toString()
-                holder.itemView.txtPostTitle.text = postList[position].title
-                holder.itemView.txtPostBody.text = "З попередженням”"
+                holder.itemView.userId.text ="${postList[position].userId}  WARNINNG"
                 holder.itemView.setBackgroundColor(Color.GRAY)
             }
             else -> {
